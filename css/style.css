@@ -10,6 +10,7 @@ table {
     border-radius: 10px;
     border-style: solid;
     border: 1px solid;
+    width: 100%;
 }
 
 /* Estoy definiendo una class*/
@@ -20,6 +21,10 @@ table {
 /* ID se usa #*/
 #pMyID {
     background-color: green;
+}
+
+body > table > tbody > tr > td:nth-child(1) > table > tbody > tr:nth-child(3) > td {
+    display: none;
 }
 
 /*
