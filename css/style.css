@@ -1,3 +1,9 @@
+/* Seteamos margenes y padding en 0 para todo desde el inicio*/
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
 p {
     background-color: rgb(255, 111, 0);
 }
@@ -13,6 +19,7 @@ table {
     width: 100%;
 }
 
+
 /* Estoy definiendo una class*/
 .pAmarillo {
     background-color: yellow;
@@ -23,8 +30,31 @@ table {
     background-color: green;
 }
 
+/* Cree la classs modal Emergency*/
+.modalEmergency {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    background-color: red;
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+    opacity: 80%;
+    display: block;
+}
+
 body > table > tbody > tr > td:nth-child(1) > table > tbody > tr:nth-child(3) > td {
     display: none;
+}
+
+.container {
+    background: blueviolet;
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.item {
+    background: gray;
 }
 
 /*
@@ -37,3 +67,17 @@ body > p:nth-child(2) {
  }
 */
 /* Creen una hoja de estilo para el formulario creado en la clase anterior  */
+
+/* Me permite definir propiedades de CSS cuando la pantalla es hasta maximo 300px*/
+@media only screen and (max-width: 300px) {
+    .modalEmergency {
+        background-color: green;
+    }
+}
+
+
+@media only screen and (min-width: 400px) {
+    .modalEmergency {
+        background-color: blue;
+    }
+}
