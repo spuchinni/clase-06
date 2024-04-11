@@ -40,7 +40,7 @@ table {
     height: 100px;
     overflow: hidden;
     opacity: 80%;
-    display: block;
+    display: none;
 }
 
 body > table > tbody > tr > td:nth-child(1) > table > tbody > tr:nth-child(3) > td {
@@ -50,12 +50,55 @@ body > table > tbody > tr > td:nth-child(1) > table > tbody > tr:nth-child(3) > 
 .container {
     background: blueviolet;
     display: flex;
-    flex-direction: row-reverse;
+    width: 150px;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 
 .item {
+    margin: 5px;
     background: gray;
 }
+
+/*
+.grid-container {
+    background-color: aquamarine;
+    width: 50%;
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+}*/
+
+div.grid-item.item-1 {
+    grid-area: playlist;
+}
+
+div.grid-item.item-2 {
+    grid-area: footer;
+    display: none;
+}
+
+div.grid-item.item-3 {
+    grid-area: search;
+}
+
+div.grid-item.item-4 {
+    grid-area: library;
+}
+
+div.grid-item.item-5 {
+    grid-area: player;
+}
+
+.grid-container {
+    background-color: aquamarine;
+    width: 100%;
+    display: grid;
+    grid-template-areas: 
+    'search playlist playlist playlist playlist playlist'
+    'library playlist playlist playlist playlist playlist'
+    'player player player player player player';
+}
+
 
 /*
 body > p:nth-child(1) {
@@ -72,6 +115,11 @@ body > p:nth-child(2) {
 @media only screen and (max-width: 300px) {
     .modalEmergency {
         background-color: green;
+    }
+
+    .container {
+        flex-direction: column;
+        width: 50px;
     }
 }
 
