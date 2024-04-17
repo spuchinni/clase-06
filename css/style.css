@@ -1,3 +1,9 @@
+/* Seteamos margenes y padding en 0 para todo desde el inicio*/
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
 p {
     background-color: rgb(255, 111, 0);
 }
@@ -13,6 +19,7 @@ table {
     width: 100%;
 }
 
+
 /* Estoy definiendo una class*/
 .pAmarillo {
     background-color: yellow;
@@ -23,9 +30,75 @@ table {
     background-color: green;
 }
 
+/* Cree la classs modal Emergency*/
+.modalEmergency {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    background-color: red;
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+    opacity: 80%;
+    display: none;
+}
+
 body > table > tbody > tr > td:nth-child(1) > table > tbody > tr:nth-child(3) > td {
     display: none;
 }
+
+.container {
+    background: blueviolet;
+    display: flex;
+    width: 150px;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.item {
+    margin: 5px;
+    background: gray;
+}
+
+/*
+.grid-container {
+    background-color: aquamarine;
+    width: 50%;
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+}*/
+
+div.grid-item.item-1 {
+    grid-area: playlist;
+}
+
+div.grid-item.item-2 {
+    grid-area: footer;
+    display: none;
+}
+
+div.grid-item.item-3 {
+    grid-area: search;
+}
+
+div.grid-item.item-4 {
+    grid-area: library;
+}
+
+div.grid-item.item-5 {
+    grid-area: player;
+}
+
+.grid-container {
+    background-color: aquamarine;
+    width: 100%;
+    display: grid;
+    grid-template-areas: 
+    'search playlist playlist playlist playlist playlist'
+    'library playlist playlist playlist playlist playlist'
+    'player player player player player player';
+}
+
 
 /*
 body > p:nth-child(1) {
@@ -37,3 +110,22 @@ body > p:nth-child(2) {
  }
 */
 /* Creen una hoja de estilo para el formulario creado en la clase anterior  */
+
+/* Me permite definir propiedades de CSS cuando la pantalla es hasta maximo 300px*/
+@media only screen and (max-width: 300px) {
+    .modalEmergency {
+        background-color: green;
+    }
+
+    .container {
+        flex-direction: column;
+        width: 50px;
+    }
+}
+
+
+@media only screen and (min-width: 400px) {
+    .modalEmergency {
+        background-color: blue;
+    }
+}
